@@ -8,18 +8,34 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 shadow w-100">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 py-3 shadow">
       <div className="container-fluid">
 
         {/* Logo */}
-        <a className="navbar-brand fs-2 fw-bold" href="#">
+        <Link className="navbar-brand fw-bold fs-3" to="/">
           ShopEasy
-        </a>
+        </Link>
 
-        {/* Links */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto gap-4">
+        {/* Mobile Toggle Button */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
+        {/* Navbar Content */}
+        <div
+          className="collapse navbar-collapse mt-3 mt-lg-0"
+          id="navbarNav"
+        >
+          {/* Links */}
+          <ul className="navbar-nav mx-auto text-center gap-lg-4">
             <li className="nav-item">
               <Link className="nav-link active" to="/">
                 Home
@@ -43,11 +59,10 @@ const Navbar = () => {
                 Contact Us
               </Link>
             </li>
-
           </ul>
 
           {/* Search */}
-          <form className="d-flex me-3">
+          <form className="d-flex my-3 my-lg-0 mx-lg-3">
             <input
               className="form-control"
               type="search"
@@ -60,22 +75,28 @@ const Navbar = () => {
               onMouseEnter={() => setHover(true)}
               onMouseLeave={() => setHover(false)}
               style={{
-                width: hover ? "350px" : "250px",
+                width: window.innerWidth > 768
+                  ? hover
+                    ? "350px"
+                    : "250px"
+                  : "100%",
                 transition: "0.4s",
-                border: hover ? "2px solid blue" : "1px solid gray",
-                boxShadow: hover ? "0px 0px 10px lightblue" : "none",
+                border: hover ? "2px solid #0d6efd" : "1px solid gray",
+                boxShadow: hover
+                  ? "0px 0px 10px lightblue"
+                  : "none",
               }}
             />
           </form>
 
           {/* Buttons */}
-          <div className="d-flex gap-2">
+          <div className="d-flex flex-column flex-lg-row gap-2">
             <button
-  className="btn btn-outline-light"
-  onClick={() => navigate("/login")}
->
-  Login
-</button>
+              className="btn btn-outline-light"
+              onClick={() => navigate("/login")}
+            >
+              Login
+            </button>
 
             <button
               className="btn btn-warning fw-bold"
@@ -84,7 +105,6 @@ const Navbar = () => {
               Cart
             </button>
           </div>
-
         </div>
       </div>
     </nav>
