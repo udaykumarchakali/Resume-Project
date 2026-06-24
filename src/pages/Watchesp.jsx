@@ -6,7 +6,7 @@ const Watches = () => {
   const [watches, setWatches] = useState([]);
   const navigate = useNavigate();
 
-  // ✅ GLOBAL SEARCH FROM CONTEXT
+ 
   const { search } = useContext(SearchContext);
 
   useEffect(() => {

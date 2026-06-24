@@ -6,7 +6,7 @@ const Shirts = () => {
   const [shirts, setShirts] = useState([]);
   const navigate = useNavigate();
 
-  // ✅ GLOBAL SEARCH FROM CONTEXT
+   
   const { search } = useContext(SearchContext);
 
   useEffect(() => {
