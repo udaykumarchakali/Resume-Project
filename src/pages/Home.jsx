@@ -1,5 +1,4 @@
-import hero from "../assets/YTDown_YouTube_Shoes-by-2GO-Theatrical-Ad-Film-Commerci_Media_geFi-ZpN2ZM_002_720p.mp4";
-import Products from "../Components/Products";
+import hero from "../assets/HERO.mp4";
 import { useNavigate } from "react-router-dom";
 import "../Components/Navbar.css";
 
@@ -27,7 +26,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Products />
+      
     </>
   );
 };

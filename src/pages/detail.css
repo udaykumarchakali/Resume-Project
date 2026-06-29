@@ -100,3 +100,38 @@
     width: 95%;
   }
 }
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 70px;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 700px;
+}
+
+.login-heading {
+  text-align: center;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.form-label {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  height: 60px;
+  font-size: 22px;
+}
+
+.btn {
+  height: 60px;
+  font-size: 24px;
+}

@@ -10,6 +10,7 @@ const Prod = () => {
       <Shoes />
       <Shirts />
       <Watches />
+      
     </>
   );
 };

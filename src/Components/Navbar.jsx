@@ -11,12 +11,12 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3 py-3 shadow">
       <div className="container-fluid">
 
-        {/* Logo */}
+        
         <Link className="navbar-brand fw-bold fs-3" to="/">
           ShopEasy
         </Link>
 
-        {/* Mobile Toggle Button */}
+       
         <button
           className="navbar-toggler"
           type="button"
@@ -29,15 +29,15 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar Content */}
+        
         <div
           className="collapse navbar-collapse mt-3 mt-lg-0"
           id="navbarNav"
         >
-          {/* Links */}
+         
           <ul className="navbar-nav mx-auto text-center gap-lg-4">
             <li className="nav-item">
-              <Link className="nav-link active" to="/">
+              <Link className="nav-link " to="/">
                 Home
               </Link>
             </li>
@@ -61,7 +61,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Search */}
+     
           <form className="d-flex my-3 my-lg-0 mx-lg-3">
             <input
               className="form-control"
