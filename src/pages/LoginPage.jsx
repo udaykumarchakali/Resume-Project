@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './detail.css'
+import "./detail.css";
+
 const LoginPage = () => {
   const navigate = useNavigate();
+
+  // Check if user is already logged in
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     if (email.trim() === "" || password.trim() === "") {
@@ -15,8 +25,32 @@ const LoginPage = () => {
       return;
     }
 
-    alert("Login Successful 🎉");
-    navigate("/");
+    try {
+      const response = await fetch("https://dummyjson.com/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: "emilys",
+          password: "emilyspass",
+        }),
+      });
+
+      const data = await response.json();
+
+      console.log(data);
+      console.log(data.accessToken);
+
+      // Save JWT Token
+      localStorage.setItem("token", data.accessToken);
+
+      alert("Login Successful 🎉");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      alert("Login Failed");
+    }
   };
 
   return (
