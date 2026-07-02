@@ -5,7 +5,7 @@ import "./detail.css";
 const LoginPage = () => {
   const navigate = useNavigate();
 
-  // Check if user is already logged in
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
 
